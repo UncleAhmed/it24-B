@@ -1,8 +1,15 @@
 [
     {
-        "name":"ICS Laboratory 1",
-        "lat":8.3593,
-        "lng":124.8691,
-        "description":"This is the ICS Laboratory 1, yipee"
+    "name": "ICS Laboratory 1",
+        "lat": 8.3593,
+        "lng": 124.8691,
+        "description": "This is the ICS Laboratory 1, yipee"
+    },
+    {
+        "name": "Hamed <3 Rexmar",
+        "lat": 8.359896177575619,
+        "lng": 124.8692445357016,
+        "description": "Loveteam forever",
+        "img": "https://boxing-social.com/app/uploads/2023/11/naseem-hamed-1280x720.jpg"
     }
 ]
