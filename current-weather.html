@@ -8,9 +8,10 @@
 <body>
 <h1>Current Weather</h1>
 <button onclick="getweather()">Get Weather</button>
+<div id="weatherResult"></div>
 
 <script>
-    const apiKey = "";
+    const apiKey = "eb97495e98e6fda08108e10bf8667e39";
 
     async function getWeather(){
         console.log("Prompted opened" + Date());
@@ -22,12 +23,32 @@
             console.log("No city entered" + Date());
             return;
         }
-        // Apli call
+        // Api call
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+    
+        try{
+            const response = await fetch (url);
+            if (!response.ok)throw new Error ("City not found");
         
+                const data= await response.json();
 
+                const weatherResult = document.getElementById ("weatherResult");
+                weatherResult.innerHTML = `
+                <h2>${data.name}, ${data.sys.country}<h2>
+                    <p>Temperature : ${data.main.temp}<p>
+                         <p>Weatherr : ${data.weather[0].description}<p>
+                             <p>Humidity : ${data.main.humidity}% <p>
+                                 <p>Wind Speed : ${dat.wind.speed} m/s<p>
+                                    `;
+               
+                }catch (error){
+                console.log("Error " + error.message);
+
+            }  
+                             
     }
+    
+
 </script>
     
 </body>
