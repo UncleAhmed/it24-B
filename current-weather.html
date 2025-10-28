@@ -6,6 +6,29 @@
     <title>Current Weather</title>
 </head>
 <body>
+<h1>Current Weather</h1>
+<button onclick="getweather()">Get Weather</button>
+
+<script>
+    const apiKey = "";
+
+    async function getWeather(){
+        console.log("Prompted opened" + Date());
+        const city = prompt ("Enter city name:");
+        console.log ("Prompt closed" + Date());
+
+        if (!city) {
+            alert("No city entered. ");
+            console.log("No city entered" + Date());
+            return;
+        }
+        // Apli call
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        
+
+    }
+</script>
     
 </body>
 </html>
